@@ -2,7 +2,7 @@
     "blogs": [
       {
         "title": "My First Blog",
-        "body": "assss",
+        "body": "Kadir Taban is React.js dev now",
         "author": "Dunlap Hubbard",
         "id": 1
         
@@ -10,7 +10,7 @@
       },
       {
         "title": "My second Blog",
-        "body": "sa",
+        "body": "Kadir Taban is currently Java and Python Dev ",
         "author": "ta Hubbard",
         "id": 2
         
@@ -18,7 +18,7 @@
       },
       {
         "title": "My third Blog",
-        "body": "assss",
+        "body": "My main branch is OpenCV",
         "author": "sdfasdf Hubbard",
         "id": 3
         

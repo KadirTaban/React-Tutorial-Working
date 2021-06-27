@@ -4,11 +4,14 @@ const Navbar = () => {
     return(
         <nav className = "Navbar">
             <h1> The Kadir Blog</h1>
+            
             <div className="links">
                 <Link to="/">Home</Link>
-                <Link to="/create">New Blog</Link>
 
+                <Link to="/create">   New Blog</Link>
             </div>
+            
+
         </nav>
     );
 }
