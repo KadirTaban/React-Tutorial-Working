@@ -1,9 +1,9 @@
 {
   "blogs": [
     {
-      "title": "My First Blog",
-      "body": "Kadir Taban is React.js dev now",
-      "author": "Dunlap Hubbard",
+      "title": "",
+      "body": "",
+      "author": "",
       "id": 1
     },
     {
@@ -23,12 +23,6 @@
       "body": "react js",
       "author": "kadir",
       "id": 4
-    },
-    {
-      "title": "dev",
-      "body": "react js",
-      "author": "kadir",
-      "id": 5
     }
   ]
 }

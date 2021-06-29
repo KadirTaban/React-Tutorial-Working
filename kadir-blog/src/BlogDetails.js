@@ -1,5 +1,7 @@
 import { useHistory, useParams } from 'react-router-dom';
+import Update from './Update';
 import useFetch from './useFetch';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -24,7 +26,12 @@ const BlogDetails = () => {
                 <div> { blog.body } </div>
                 <button onClick={handleClick}>delete </button>
             </article>
+            
             )}
+            <Route>
+            <Update onClick = {handleClick}></Update>
+            
+            </Route>
         </div>
     );
 }
