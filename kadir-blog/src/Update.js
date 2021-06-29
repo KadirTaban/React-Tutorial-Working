@@ -1,23 +1,23 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 const Update = () => {
-    const[title,setTitle] = useState('');
-    const[body,setBody] = useState('');
-    const[author,setAuthor] = useState('');
+    const[title,setTitle] = useState('change them');
+    const[body,setBody] = useState('change them');
+    const[author,setAuthor] = useState('change that');
     const[isPending,setIsPending]=useState(false);
     const history = useHistory();
 
 
-    const handleChange = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const blog = {  title, body, author};
         
         setIsPending(true);
 
-        fetch('http://localhost:8000/blogs/1',{
+        fetch('http://localhost:8000/blogs/',{
             method:'PUT',
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(blog)
@@ -34,32 +34,38 @@ const Update = () => {
         <div className="Update">
 
         
-            <form onChange={handleChange}>
+            <form onSubmit={handleSubmit}>
             
             <label> Blog title:</label>
 
             <input type= "text" 
             required
-            value ={title} 
-            onChange={(e) => setTitle(e.target.title)}>
+            defaultValue ={title} 
+            defaultValue={(e) => setTitle(e.target.value)}>
             </input>
             <label> Blog body: </label>
 
             <textarea
             required
-            value={ body }
-            onChange={(e)=> setBody(e.target.body)}></textarea>
+            defaultValue={ body }
+            defaultValue={(e)=> setBody(e.target.value)}></textarea>
             <label>Blog Author : </label>
 
             <textarea
                 required
-                value={author}
-                onChange ={(e)=> setAuthor(e.target.author)}></textarea>
-
+                defaultValue={author}
+                defaultValue ={(e)=> setAuthor(e.target.value)}></textarea>
+            
+            
+            
             </form>
 
             
         </div>
-    )
+       
+    
+    );
+   
+    
 }
 export default Update;

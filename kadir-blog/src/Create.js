@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 const Create = () => {
     const[title,setTitle] = useState('please,enter a title.');
     const[body,setBody] = useState('please,enter a body.');
@@ -19,13 +20,11 @@ const Create = () => {
             body: JSON.stringify(blog)
 
         }).then(()=>{
-            console.log('new blog is added');
+            console.log('new blog is added')
             setIsPending(false);
             //history.go(-1);
             history.push('/')
         })
-
-        
 
     }
 

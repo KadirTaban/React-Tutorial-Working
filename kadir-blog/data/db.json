@@ -1,28 +1,10 @@
 {
   "blogs": [
     {
-      "title": "",
-      "body": "",
-      "author": "",
+      "title": "please,enter a title.",
+      "body": "please,enter a body.",
+      "author": "please,enter an author.",
       "id": 1
-    },
-    {
-      "title": "My second Blog",
-      "body": "Kadir Taban is currently Java and Python Dev ",
-      "author": "ta Hubbard",
-      "id": 2
-    },
-    {
-      "title": "My third Blog",
-      "body": "My main branch is OpenCV",
-      "author": "sdfasdf Hubbard",
-      "id": 3
-    },
-    {
-      "title": "dev",
-      "body": "react js",
-      "author": "kadir",
-      "id": 4
     }
   ]
 }
