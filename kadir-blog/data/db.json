@@ -1,10 +1,16 @@
 {
   "blogs": [
     {
-      "title": "asdf",
-      "body": "asdf them",
-      "author": "asdf",
+      "title": "change them",
+      "body": "change them",
+      "author": "change that",
       "id": 1
+    },
+    {
+      "title": "dev",
+      "body": "kadir",
+      "author": "please,enter an author.",
+      "id": 2
     }
   ]
 }
