@@ -8,9 +8,9 @@ const BlogDetails = () => {
     const { id } = useParams();
     const {data: blog, error} = useFetch('http://localhost:8000/blogs/'+id);
     const history=useHistory();
-    const[title,setTitle] = useState('change them');
-    const[body,setBody] = useState('change them');
-    const[author,setAuthor] = useState('change that');
+    const[title,setTitle] = useState('can change them');
+    const[body,setBody] = useState('can change them');
+    const[author,setAuthor] = useState('can change that');
     const[isPending,setIsPending]=useState();
 
     const handleClick = ()=>{
@@ -32,7 +32,7 @@ const BlogDetails = () => {
             body:JSON.stringify(blog)
 
         }).then(() => {
-            console.log('blog has changed.');
+            console.log(' blog has changed.');
             setIsPending(false);
 
             history.push('/');  
@@ -47,7 +47,7 @@ const BlogDetails = () => {
                 <h2>{ blog.title }</h2>
                 <p>Written by { blog.author }</p>
                 <div> { blog.body } </div>
-                <button onClick={handleClick}>delete </button>
+                <button onClick={handleClick}> delete </button>
             </article>
             
 
@@ -56,30 +56,33 @@ const BlogDetails = () => {
             
             <form onSubmit={handleSubmit}>
             
-            <label> Blog title:</label>
-
+            <label> Blog title:       
+            </label>
             <input type= "text" 
             required
-            value ={title} 
+            value ={ title } 
             onChange={(e) => setTitle(e.target.value)}>
             </input>
+        
+
+             
             <label> Blog body: </label>
 
             <textarea
             required
             value={ body }
             onChange={(e)=> setBody(e.target.value)}></textarea>
-            <label>Blog Author : </label>
+            <label> Blog Author : </label>
 
             <textarea
                 required
-                value={author}
+                value={ author }
                 onChange ={(e)=> setAuthor(e.target.value)}></textarea>
             
             
             
             </form>
-            <button onClick={handleSubmit}> update </button>
+            <button onClick={ handleSubmit }> update </button>
 
 
         </div>
