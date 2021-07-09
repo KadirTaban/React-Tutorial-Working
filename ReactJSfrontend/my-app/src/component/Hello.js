@@ -6,11 +6,11 @@ function Hello(props) {
     }
 
     return(
-    <div>
+    <div className = "container">
         <h1> My name is : {props.name},
-        My surname is: {props.lastname}</h1>
+        </h1>
 
-         <button onClick = {Clickme}> Click me</button>
+         <button className = "btn btn-success" onClick = {Clickme}> Click me</button>
     </div>
 
     )
