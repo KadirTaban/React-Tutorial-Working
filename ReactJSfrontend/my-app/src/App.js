@@ -3,6 +3,7 @@ import './App.css';
 import Hello from './component/Hello';
 import FunComponent from './component/FunComponent';
 import MyClass from './component/MyClass';
+import Name from './component/Name';
 function App() {
 
   function clicked() {
@@ -11,8 +12,8 @@ function App() {
   }
   return (
     <div className = "container">
-      <Hello name = "Kadir" lastname="Tab"></Hello>
-      <MyClass email= "kadir.codes@gmail.com" myclick = { clicked }/>
+  
+      <Name/>
     </div>
   );
 }
