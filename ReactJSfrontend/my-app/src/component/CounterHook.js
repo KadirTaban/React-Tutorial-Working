@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 function CounterHook() {
 
@@ -11,6 +11,11 @@ function CounterHook() {
         setArticles([...articles,'New Article'])//first one copy on the all articles
 
     }
+
+    useEffect(() => {
+        console.log("useEffect is called.")
+        document.title =`You have clicked ${count} times`
+    },[count])
     
     return (
         <div>
@@ -37,6 +42,7 @@ function CounterHook() {
             })}
 
             <button onClick = {addArticle} className = "btn btn-primary">Add</button>
+            <button onClick = {() => setCount(count+1)} className= "btn btn-primary"> Change Title</button>
             </div>
     )
 }
