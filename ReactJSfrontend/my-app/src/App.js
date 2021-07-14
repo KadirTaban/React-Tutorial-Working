@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './component/Counter';
 import React,{Component} from 'react';
-import CounterHook from './component/CounterHook';
-import FetchData from './component/FetchData';
+import ComponentA from './component/ComponentA';
+import UseReducer from './component/UseReducer';
+import DataFetching from './component/DataFetching';
 
 
-
+export const MyContext = React.createContext()
 
 function App() {
   
@@ -15,9 +16,8 @@ function App() {
   return (
     <div className = "container">
 
-    {/*<Counter/>*/}
-    {/*<CounterHook/>*/}
-    <FetchData></FetchData>
+
+    <DataFetching></DataFetching>
 
     
     
