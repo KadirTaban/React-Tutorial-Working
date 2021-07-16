@@ -5,7 +5,8 @@ function Form(props) {
     const [description, setDescription] = useState('')
 
 
-    useEffect(()=>{
+
+    useEffect(() => {
         setTitle(props.article.title)
         setDescription(props.article.description)
     },[props.article])
@@ -16,6 +17,12 @@ function Form(props) {
         .then(resp => props.updatedInformation(resp))
     
 
+    }
+
+    const insertArticle = () => {
+
+        APIService.InsertArticle({title, description})
+        .then(resp => props.insertedInformation(resp))
     }
 
     return (
@@ -38,7 +45,13 @@ function Form(props) {
 
                 
                 <br/>
-                <button onClick= {updateArticle} className = "btn btn-success"> Update Article</button>
+
+                {
+                    props.article.id ?  <button onClick= {updateArticle} className = "btn btn-success"> Update Article</button>
+                    :                 <button onClick= {insertArticle} className = "btn btn-success"> Insert Article</button>
+
+
+                }
                 </div>
 
             ) : null}

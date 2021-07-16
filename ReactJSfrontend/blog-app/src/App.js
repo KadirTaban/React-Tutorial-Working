@@ -36,14 +36,42 @@ function App() {
     setArticles(new_article)
 
   }
+
+  const articleForm = ()=>{
+    setEditArticle({title:'', description:''})
+
+  }
+
+  const insertedInformation = (article) => {
+    const new_articles=[...articles,article]
+    setArticles(new_articles)
+  }
+
+  const deleteBtn =(article) => {
+    const new_articles = articles.filter(myarticle =>{
+      if(myarticle.id === article.id) {
+        return false
+      }
+      return true;
+    })
+  }
+
   return (
     <div className="App">
-        <h3> Django And ReactJS Blog App </h3>
+
+      <div className= "row"> 
+      <div className = "col">
+        <h2> Django And ReactJS Blog App </h2>
         <br/>
+        </div> 
+        <div className="col">
+        <button onClick ={articleForm} className ="btn btn-primary">Insert Article </button>
+        </div>
+      </div>
         
 
-        <ArticleList articles={articles} editBtn = {editBtn}/>
-        {editArticle ? <Form article = {editArticle} updatedInformation/>:null}
+        <ArticleList articles={articles} editBtn = {editBtn} deleteBtn = {deleteBtn}/>
+        {editArticle ? <Form article = {editArticle} updatedInformation = {updatedInformation} insertedInformation = {insertedInformation}/>:null}
     </div>
   );
 }
