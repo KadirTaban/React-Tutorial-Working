@@ -54,6 +54,7 @@ function App() {
       }
       return true;
     })
+    setArticles(new_articles)
   }
 
   return (
