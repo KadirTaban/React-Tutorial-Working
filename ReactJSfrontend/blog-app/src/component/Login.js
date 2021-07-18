@@ -6,13 +6,14 @@ function Login() {
     const[username, setUsername] = useState('')
     const[password, setPassword] = useState('')
     const[token, setToken] = useCookies(['mytoken'])
+    const[isLogin,setLogin] = useState(true)
     let history = useHistory()
 
     useEffect(() => {
         if(token['mytoken']) {
-            history.push('/articles')
+            history.push('/api/articles')
         }
-    })
+    },[token])
 
     const loginBtn = () => {
         APIService.LoginUser({username,password})
@@ -21,12 +22,19 @@ function Login() {
 
 
     }
+
+    const RegisterBtn = () => { 
+        APIService.RegisterUser({username,password})
+        .then(() => loginBtn())
+        .catch(error => console.log(error))
+
+    }
     return (
         <div className = "App">
 
             <br/>
             <br/>
-            <h1>Login </h1>
+            {isLogin ? <h1> Please Login</h1> : <h1>Please Register</h1>}
 
             <br/>
             <br/>
@@ -42,8 +50,19 @@ function Login() {
             <input type = "password" className = "form-control" id = "password" placeholder ="Please Enter password" value={password} onChange = {e => setPassword(e.target.value)}></input>
 
             </div>
+            {isLogin ?  <button onClick = {loginBtn} className = "btn btn-primary">Login</button>
+        :<button onClick = {RegisterBtn} className = "btn btn-primary">Register</button>
+        }
 
-            <button onClick = {loginBtn} className = "btn btn-primary">Login</button>
+            
+            <div className = "mb-3">
+            <br/>
+            
+            {isLogin ? <h5> If You Don't Have account, please <button className="btn btn-primary" onClick = {() => setLogin(false)}> Register </button> Here </h5>
+            
+            : <h5> If You Have Account,Please  <button className="btn btn-primary" onClick = {() => setLogin(true)}> Login </button>Here </h5>
+            }
+            </div>
         </div>
     )
 }
