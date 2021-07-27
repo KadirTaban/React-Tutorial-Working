@@ -11,7 +11,7 @@ function Login() {
 
     useEffect(() => {
         if(token['mytoken']) {
-            history.push('/api/articles')
+            history.push('/articles')
         }
     },[token])
 
