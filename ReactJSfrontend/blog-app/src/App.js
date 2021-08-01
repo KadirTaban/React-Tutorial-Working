@@ -80,7 +80,7 @@ function App() {
 
       <div className= "row"> 
       <div className = "col">
-        <h2> Django And ReactJS Blog App </h2>
+        <h2> MountainLabs.DEV</h2>
         <br/>
         </div> 
         <div className="col">
