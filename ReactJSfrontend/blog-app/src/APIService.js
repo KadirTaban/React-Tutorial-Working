@@ -12,6 +12,7 @@ export default class APIService {
             body:JSON.stringify(body)
         }).then(resp=> resp.json())
     }
+   
 
     static InsertArticle(body,token) {
         return fetch('http://127.0.0.1:8000/api/articles/',{
@@ -26,6 +27,8 @@ export default class APIService {
         }).then(resp=>resp.json())
     }
 
+
+ 
     static DeleteArticle(article_id,token){
         return fetch(`http://127.0.0.1:8000/api/articles/${article_id}/`, {
             'method':'DELETE',

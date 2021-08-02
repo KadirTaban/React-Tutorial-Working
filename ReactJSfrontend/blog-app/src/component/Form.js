@@ -4,21 +4,21 @@ import {useCookies} from 'react-cookie'
 function Form(props) {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [file,setFile] = useState('');
+    const [cover,setCover] = useState('');
     const [token] = useCookies(['mytoken'])
     
 
     useEffect(() => {
         setTitle(props.article.title)
         setDescription(props.article.description)
-        setFile(props.article.files)
+        setCover(props.article.cover)
         
         
     },[props.article])
 
     const updateArticle = () => {
 
-        APIService.UpdateArticle(props.article.id, {title,description, file},token['mytoken'])
+        APIService.UpdateArticle(props.article.id, {title, description, cover},token['mytoken'])
         .then(resp => props.updatedInformation(resp))
     
 
@@ -26,9 +26,14 @@ function Form(props) {
 
     const insertArticle = () => {
 
-        APIService.InsertArticle({title, description, file},token['mytoken'])
+        APIService.InsertArticle({title, description, cover},token['mytoken'])
         .then(resp => props.insertedInformation(resp))
     }
+    const updateImage = () => {
+        APIService.UpdateArticle({cover})
+        .then(resp => props.insertedInformation(resp))
+    }
+    
 
     return (
         <div>
@@ -47,26 +52,19 @@ function Form(props) {
                 <label htmlFor = "description" className= "form-label">Description:</label>
                 <textarea className = "form-control" id ="description" rows="5"
                 value= {description} onChange = {e => setDescription(e.target.value)}></textarea>
-                
-                <Fragment>
-                   
-                        <div className = 'custom-file mb-4'>
-                            <input type= 'file' className='custom-file-input' id ='customFile' placeholder ="Choose"></input>
-                            <label className = 'custom-file-label' htmlFor='customFile'>
-                                Choose file
-                            </label>
-                        </div>
-
-                        <input type="Submit" value="Upload" className = "btn btn-primary btn-block mt-4"></input>
+                <br/>
+                <label>Cover 
+                    <input type = 'file' onChange= {e => setCover(e.target.files[0])}></input>
                     
-                </Fragment>
-
+                </label>
                 
                 <br/>
 
                 {
                     props.article.id ?  <button onClick= {updateArticle} className = "btn btn-success"> Update Article</button>
                     :                 <button onClick= {insertArticle} className = "btn btn-success"> Insert Article</button>
+                                  
+
 
 
                 }

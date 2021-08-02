@@ -95,7 +95,7 @@ function App() {
         
 
         <ArticleList articles={articles} editBtn = {editBtn} deleteBtn = {deleteBtn}/>
-        {editArticle ? <Form article = {editArticle} updatedInformation = {updatedInformation} insertedInformation = {insertedInformation}/>:null}
+        {editArticle ? <Form  article = {editArticle} updatedInformation = {updatedInformation} insertedInformation = {insertedInformation}/>:null}
     </div>
   );
 }
