@@ -2,7 +2,7 @@
 
 export default class APIService {
 
-    static UpdateArticle(article_id,body,token) {
+    static UpdateArticle(article_id,body,token){
         return fetch(`http://127.0.0.1:8000/api/articles/${article_id}/`, {
             'method':'PUT',
             headers:{

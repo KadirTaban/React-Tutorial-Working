@@ -29,10 +29,7 @@ function Form(props) {
         APIService.InsertArticle({title, description, cover},token['mytoken'])
         .then(resp => props.insertedInformation(resp))
     }
-    const updateImage = () => {
-        APIService.UpdateArticle({cover})
-        .then(resp => props.insertedInformation(resp))
-    }
+  
     
 
     return (
@@ -53,11 +50,7 @@ function Form(props) {
                 <textarea className = "form-control" id ="description" rows="5"
                 value= {description} onChange = {e => setDescription(e.target.value)}></textarea>
                 <br/>
-                <label>Cover 
-                    <input type = 'file' onChange= {e => setCover(e.target.files[0])}></input>
-                    <button onClick = {updateImage} className = "btn btn-success">uploadphoto</button>
-                    
-                </label>
+                
                 
                 <br/>
 

@@ -22,7 +22,6 @@ function ArticleList(props) {
               <div key = {article.id}>
             <h2>{article.title}</h2>
             <p>{article.description}</p>
-            <p1>{article.cover}</p1>
 
 
             <div className = "row">
