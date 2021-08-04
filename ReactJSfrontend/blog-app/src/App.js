@@ -51,7 +51,7 @@ function App() {
   
 
   const articleForm = ()=>{
-    setEditArticle({title:'', description:''})
+    setEditArticle({title:'', description:'',cover:''})
 
   }
 

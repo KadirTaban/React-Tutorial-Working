@@ -55,6 +55,7 @@ function Form(props) {
                 <br/>
                 <label>Cover 
                     <input type = 'file' onChange= {e => setCover(e.target.files[0])}></input>
+                    <button onClick = {updateImage} className = "btn btn-success">uploadphoto</button>
                     
                 </label>
                 
