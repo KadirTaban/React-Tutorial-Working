@@ -9,14 +9,14 @@ a web application like a blog.Backend has developed with Django if you wanna go 
 
 There are register page, login page, blogs page and update, delete labels.
 
-
-
 Login Page
-<img width="1440" alt="Screen Shot 2021-08-05 at 14 44 04" src="https://user-images.githubusercontent.com/32621058/128344953-ec5c3adb-7f4c-431d-8be4-c032c068e465.png">
-
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 50 01" src="https://user-images.githubusercontent.com/32621058/128345219-9cf6e302-79a9-49d8-aa41-43a9fba6657a.png">
 
 Register Page
 ![Screen Shot 2021-07-27 at 16 27 24 (2)](https://user-images.githubusercontent.com/32621058/127161865-0ad0c8db-0c79-4efc-b666-4ad52c69c745.png)
+
+Home Page
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 44 04" src="https://user-images.githubusercontent.com/32621058/128344953-ec5c3adb-7f4c-431d-8be4-c032c068e465.png">
 
 
 Blogs Page, Insert article, update and delete labels
