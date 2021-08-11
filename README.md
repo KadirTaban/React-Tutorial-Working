@@ -9,18 +9,19 @@ a web application like a blog.Backend has developed with Django if you wanna go 
 
 There are register page, login page, blogs page and update, delete labels.
 
-
-
 Login Page
-<img width="1680" alt="Screen Shot 2021-07-27 at 14 18 04" src="https://user-images.githubusercontent.com/32621058/127161418-13ddda49-ba89-41c7-b76e-8ce8d8bcd399.png">
-
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 50 01" src="https://user-images.githubusercontent.com/32621058/128345219-9cf6e302-79a9-49d8-aa41-43a9fba6657a.png">
 
 Register Page
 ![Screen Shot 2021-07-27 at 16 27 24 (2)](https://user-images.githubusercontent.com/32621058/127161865-0ad0c8db-0c79-4efc-b666-4ad52c69c745.png)
 
+Home Page
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 44 04" src="https://user-images.githubusercontent.com/32621058/128344953-ec5c3adb-7f4c-431d-8be4-c032c068e465.png">
+
 
 Blogs Page, Insert article, update and delete labels
-![Screen Shot 2021-07-27 at 16 29 56 (2)](https://user-images.githubusercontent.com/32621058/127162439-8278e965-a74a-4add-a926-a21d56bc0f7b.png)
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 43 32" src="https://user-images.githubusercontent.com/32621058/128345012-c27baf68-a7be-40d5-be09-85b1058ff3b2.png">
+<img width="1440" alt="Screen Shot 2021-08-05 at 14 43 42" src="https://user-images.githubusercontent.com/32621058/128345054-c9c66068-e60b-499a-ac0d-8be010dada9e.png">
 
 
 Design isn't so good but that is understandable.
