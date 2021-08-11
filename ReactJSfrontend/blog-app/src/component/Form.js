@@ -1,24 +1,22 @@
-import React,{Fragment,useState,useEffect} from 'react'
+import React,{useState,useEffect} from 'react'
 import APIService from '../APIService'
 import {useCookies} from 'react-cookie'
 function Form(props) {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [cover,setCover] = useState('');
     const [token] = useCookies(['mytoken'])
     
 
     useEffect(() => {
         setTitle(props.article.title)
         setDescription(props.article.description)
-        setCover(props.article.cover)
         
         
     },[props.article])
 
     const updateArticle = () => {
 
-        APIService.UpdateArticle(props.article.id, {title, description, cover},token['mytoken'])
+        APIService.UpdateArticle(props.article.id, {title, description},token['mytoken'])
         .then(resp => props.updatedInformation(resp))
     
 
@@ -26,9 +24,11 @@ function Form(props) {
 
     const insertArticle = () => {
 
-        APIService.InsertArticle({title, description, cover},token['mytoken'])
+        APIService.InsertArticle({title, description},token['mytoken'])
         .then(resp => props.insertedInformation(resp))
     }
+
+    
   
     
 
@@ -38,18 +38,19 @@ function Form(props) {
 
                 <div className="mb-3">
                 
-                <label htmlFor = "title" className = "form-control">Title</label>
-                <input type="text" className = "form-control" id = "title" placeholder="Please Enter The Title "
+                <label htmlFor = "title" className = "form-label">Title: </label>
+                <textarea type="text" className = "form-control" id = "title" placeholder="Please Enter The Title "
                 
                 value = {title} onChange = {e=> setTitle(e.target.value)}
                 
-                ></input>
+                ></textarea>
 
                 
-                <label htmlFor = "description" className= "form-label">Description:</label>
+                <label htmlFor = "description" className= "form-label">Description: </label>
                 <textarea className = "form-control" id ="description" rows="5"
                 value= {description} onChange = {e => setDescription(e.target.value)}></textarea>
                 <br/>
+                
                 
                 
                 <br/>

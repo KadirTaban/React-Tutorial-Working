@@ -1,6 +1,9 @@
 
 
 export default class APIService {
+    
+
+        
 
     static UpdateArticle(article_id,body,token){
         return fetch(`http://127.0.0.1:8000/api/articles/${article_id}/`, {
@@ -60,5 +63,10 @@ export default class APIService {
             
         }).then(resp=>resp.json())
     }
+
+  
+       
+    
+    
     
 }
